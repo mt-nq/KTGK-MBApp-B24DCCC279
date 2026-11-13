@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quản lý Công việc</string>
+
+    <!-- Toolbar / Screen titles -->
+    <string name="title_add_task">Thêm công việc</string>
+    <string name="title_edit_task">Chỉnh sửa công việc</string>
+
+    <!-- Hints -->
+    <string name="hint_title">Tên công việc *</string>
+    <string name="hint_description">Mô tả</string>
+    <string name="hint_due_date">Ngày hết hạn (dd/MM/yyyy)</string>
+    <string name="hint_search">Tìm kiếm theo tên công việc...</string>
+
+    <!-- Labels -->
+    <string name="label_priority">Mức độ ưu tiên</string>
+    <string name="label_status_filter">Lọc theo trạng thái</string>
+    <string name="label_priority_filter">Lọc theo ưu tiên</string>
+
+    <!-- Priority values -->
+    <string name="priority_low">Thấp</string>
+    <string name="priority_medium">Trung bình</string>
+    <string name="priority_high">Cao</string>
+
+    <!-- Status filter options -->
+    <string name="filter_all">Tất cả</string>
+    <string name="filter_pending">Chưa thực hiện</string>
+    <string name="filter_done">Đã hoàn thành</string>
+
+    <!-- Stats bar -->
+    <string name="stats_default">Tổng: 0 | Hoàn thành: 0 | Chưa xong: 0</string>
+    <string name="stats_total_default">Tổng: 0</string>
+    <string name="stats_done_default">Hoàn thành: 0</string>
+    <string name="stats_pending_default">Chưa xong: 0</string>
+    <string name="stats_total">Tổng: %d</string>
+    <string name="stats_done">Hoàn thành: %d</string>
+    <string name="stats_pending">Chưa xong: %d</string>
+
+    <!-- Empty state -->
+    <string name="empty_state">Chưa có công việc nào</string>
+
+    <!-- FAB -->
+    <string name="fab_add_task">Thêm công việc mới</string>
+
+    <!-- Buttons -->
+    <string name="btn_cancel">Hủy</string>
+    <string name="btn_save">Lưu</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_delete_title">Xóa công việc</string>
+    <string name="dialog_delete_message">Bạn có chắc muốn xóa công việc này không?</string>
+    <string name="dialog_confirm">Xác nhận</string>
+    <string name="dialog_task_options">Tùy chọn</string>
+    <string name="option_edit">Chỉnh sửa</string>
+    <string name="option_delete">Xóa</string>
+
+    <!-- Validation -->
+    <string name="error_title_required">Vui lòng nhập tên công việc</string>
+    <string name="toast_saved">Đã lưu công việc</string>
+    <string name="toast_deleted">Đã xóa công việc</string>
+
+    <!-- Accessibility / content descriptions -->
+    <string name="cd_task_status">Trạng thái hoàn thành</string>
+    <string name="cd_pick_date">Chọn ngày</string>
+
+    <!-- Menu -->
+    <string name="menu_search">Tìm kiếm</string>
+</resources>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".MainActivity">
+
+    <!-- AppBar with Toolbar, Search, and Filters -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:title="@string/app_name"
+            app:titleTextColor="@android:color/white"
+            app:popupTheme="@style/ThemeOverlay.Material3.Light" />
+
+        <!-- Search Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:paddingHorizontal="12dp"
+            android:paddingBottom="6dp">
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@drawable/search_bg"
+                android:hint="@string/hint_search"
+                android:textColorHint="#9E9E9E"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:paddingHorizontal="12dp"
+                android:drawableStart="@android:drawable/ic_menu_search"
+                android:drawablePadding="8dp"
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:maxLines="1" />
+
+        </LinearLayout>
+
+        <!-- Status + Priority Filter Spinners -->
+        <LinearLayout
+            android:id="@+id/layoutFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingBottom="8dp"
+            android:background="?attr/colorPrimary">
+
+            <Spinner
+                android:id="@+id/spStatusFilter"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/spinner_bg"
+                android:padding="4dp"
+                android:popupBackground="?attr/colorSurface" />
+
+            <Spinner
+                android:id="@+id/spPriorityFilter"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/spinner_bg"
+                android:padding="4dp"
+                android:popupBackground="?attr/colorSurface" />
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <!-- RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingTop="6dp"
+            android:paddingBottom="80dp"
+            tools:listitem="@layout/item_task" />
+
+        <!-- Empty State View -->
+        <TextView
+            android:id="@+id/tvEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/empty_state"
+            android:textSize="16sp"
+            android:textColor="?attr/colorOnSurfaceVariant"
+            android:drawableTop="@android:drawable/ic_menu_agenda"
+            android:drawablePadding="8dp"
+            android:visibility="gone" />
+
+        <!-- Stats Bar -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardStats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginBottom="8dp"
+            app:cardElevation="3dp"
+            app:cardCornerRadius="8dp">
+
+            <TextView
+                android:id="@+id/tvStats"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="12dp"
+                android:text="@string/stats_default"
+                android:textStyle="bold"
+                android:textSize="13sp"
+                android:textColor="?attr/colorOnSurface" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+    <!-- Floating Action Button -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="60dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/fab_add_task"
+        app:srcCompat="@android:drawable/ic_input_add"
+        app:tint="@android:color/white" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

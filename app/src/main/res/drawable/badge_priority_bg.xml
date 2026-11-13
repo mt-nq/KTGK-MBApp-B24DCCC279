@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Rounded rectangle background used for the priority badge TextView -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="12dp" />
+    <!-- tint is set programmatically by the adapter -->
+    <solid android:color="@color/priority_low" />
+</shape>
