@@ -14,7 +14,7 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "tasks.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     // Table & columns
     public static final String TABLE_TASKS      = "tasks";
@@ -42,6 +42,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_TASKS);
+        insertSampleData(db);
+    }
+
+    private void insertSampleData(SQLiteDatabase db) {
+        String insertQuery = "INSERT INTO " + TABLE_TASKS + " (" + COL_TITLE + ", " + COL_DESCRIPTION + ", " + COL_DUE_DATE + ", " + COL_PRIORITY + ", " + COL_STATUS + ") VALUES ";
+        db.execSQL(insertQuery + "('Hoàn thành bài tập lập trình', 'Viết unit test cho các function chính của ứng dụng', '31/12/2024', 2, 0)");
+        db.execSQL(insertQuery + "('Mua sắm thực phẩm', 'Mua rau, thịt, cá và trái cây cho cả tuần', '25/11/2023', 0, 1)");
+        db.execSQL(insertQuery + "('Dọn dẹp nhà cửa', 'Lau nhà, giặt đồ và dọn dẹp phòng ngủ', '26/11/2023', 1, 0)");
+        db.execSQL(insertQuery + "('Học tiếng Anh', 'Học 50 từ vựng mới và làm bài tập ngữ pháp', '28/11/2023', 2, 0)");
+        db.execSQL(insertQuery + "('Gặp gỡ đối tác', 'Thảo luận về dự án mới và ký kết hợp đồng', '30/11/2023', 2, 1)");
     }
 
     @Override
